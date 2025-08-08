@@ -4,6 +4,23 @@
 
 A personalized language-learning app that brings the magic of Duolingo-style lessons to your own curated vocabulary lists and contexts.
 
+
+## 📱 Looking for Mobile App Testers!
+We’ve started developing the mobile version of our web project 🚀
+Right now, we’re in the beta testing phase and looking for testers to try the app and share their feedback.
+
+If you’d like to become a tester:
+📩 Send an email to [info@wordpeckerapp.com] with the subject "Tester Application".
+
+In your email, please include:
+
+Your name / username
+
+A short note about yourself
+
+Your feedback will help us make the app even better 💡
+Thank you for your support! ❤️
+
 ## 📋 Table of Contents
 
 - [🚀 Quick Start](#-quick-start)
