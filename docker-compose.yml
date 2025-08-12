@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   mongodb:
     image: mongo:7.0
@@ -22,7 +21,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-
   backend:
     build:
       context: ./backend
@@ -38,13 +36,12 @@ services:
       - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
       - PEXELS_API_KEY=${PEXELS_API_KEY}
     ports:
-      - "3000:3000"
+      - "13000:3000"
     volumes:
       - ./backend:/app
       - /app/node_modules
     depends_on:
-      mongodb:
-        condition: service_healthy
+      - mongodb
     networks:
       - wordpecker-network
     healthcheck:
@@ -53,7 +50,6 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-
   frontend:
     build:
       context: ./frontend
@@ -63,19 +59,16 @@ services:
     environment:
       - VITE_API_URL=http://localhost:3000
     ports:
-      - "5173:5173"
+      - "15173:5173"
     volumes:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
-      backend:
-        condition: service_healthy
+      - backend
     networks:
       - wordpecker-network
-
 volumes:
   mongodb_data_dev:
-
 networks:
   wordpecker-network:
     driver: bridge
